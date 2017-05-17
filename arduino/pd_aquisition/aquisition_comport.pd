@@ -1,0 +1,95 @@
+#N canvas 866 84 349 425 10;
+#X msg 16 61 ports;
+#X obj 15 115 comport 3 9600;
+#X msg 25 86 close;
+#X msg 67 86 open 3;
+#X obj 15 139 sel 13 10;
+#X obj 66 194 t a;
+#X obj 66 168 list prepend;
+#X obj 16 230 list;
+#X obj 17 181 t b b;
+#N canvas 661 206 523 418 parse 0;
+#X obj 24 12 inlet;
+#X obj 35 369 nbx 5 14 -1e+37 1e+37 0 0 temperature_air empty temperature_air
+0 -8 0 10 -262144 -1 -1 2140 256;
+#X obj 96 327 nbx 5 14 -1e+37 1e+37 0 0 humidity_air empty humidity_air
+0 -8 0 10 -262144 -1 -1 3770 256;
+#X obj 161 285 nbx 5 14 -1e+37 1e+37 0 0 temperature_water empty temperature_water
+0 -8 0 10 -262144 -1 -1 1856 256;
+#X obj 222 240 nbx 5 14 -1e+37 1e+37 0 0 luminosity empty luminosity
+0 -8 0 10 -262144 -1 -1 1100 256;
+#X obj 287 199 nbx 5 14 -1e+37 1e+37 0 0 ph empty ph 0 -8 0 10 -262144
+-1 -1 542 256;
+#X obj 355 184 nbx 5 14 -1e+37 1e+37 0 0 conductivity empty conductivity
+0 -8 0 10 -262144 -1 -1 1704 256;
+#X obj 32 64 unpack f f f f f f f f f f f f f f f f f f f f f f f f
+f f f f f;
+#X obj 33 117 parser;
+#X obj 96 117 parser;
+#X obj 162 118 parser;
+#X obj 223 117 parser;
+#X obj 286 118 parser;
+#X obj 354 115 parser;
+#X connect 0 0 7 0;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 7 2 8 2;
+#X connect 7 3 8 3;
+#X connect 7 5 9 0;
+#X connect 7 6 9 1;
+#X connect 7 7 9 2;
+#X connect 7 8 9 3;
+#X connect 7 10 10 0;
+#X connect 7 11 10 1;
+#X connect 7 12 10 2;
+#X connect 7 13 10 3;
+#X connect 7 15 11 0;
+#X connect 7 16 11 1;
+#X connect 7 17 11 2;
+#X connect 7 18 11 3;
+#X connect 7 20 12 0;
+#X connect 7 21 12 1;
+#X connect 7 22 12 2;
+#X connect 7 23 12 3;
+#X connect 7 25 13 0;
+#X connect 7 26 13 1;
+#X connect 7 27 13 2;
+#X connect 7 28 13 3;
+#X connect 8 0 1 0;
+#X connect 9 0 2 0;
+#X connect 10 0 3 0;
+#X connect 11 0 4 0;
+#X connect 12 0 5 0;
+#X connect 13 0 6 0;
+#X restore 16 258 pd parse;
+#X obj 189 79 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
+0 -8 0 10 -262144 -1 -1 2140 256;
+#X obj 189 110 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
+0 -8 0 10 -262144 -1 -1 3770 256;
+#X obj 189 141 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
+0 -8 0 10 -262144 -1 -1 1856 256;
+#X obj 189 172 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
+0 -8 0 10 -262144 -1 -1 1100 256;
+#X obj 189 203 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
+-1 -1 542 256;
+#X obj 189 236 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
+0 -8 0 10 -262144 -1 -1 1704 256;
+#X text 18 23 aquisition opengarden au seconde.;
+#X obj 67 60 loadbang;
+#X text 23 300 todo : parser les comport a l initialisation pour choisir
+l arduino dynamiquement au lieu du hard code actuel;
+#X obj 90 141 print;
+#X connect 0 0 1 0;
+#X connect 1 0 4 0;
+#X connect 1 1 19 0;
+#X connect 2 0 1 0;
+#X connect 3 0 1 0;
+#X connect 4 0 8 0;
+#X connect 4 2 6 0;
+#X connect 5 0 6 1;
+#X connect 5 0 7 1;
+#X connect 6 0 5 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 0;
+#X connect 8 1 6 1;
+#X connect 17 0 3 0;
