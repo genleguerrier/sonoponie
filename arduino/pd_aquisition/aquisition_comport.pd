@@ -1,27 +1,25 @@
-#N canvas 866 84 349 425 10;
-#X msg 16 61 ports;
-#X obj 15 115 comport 3 9600;
-#X msg 25 86 close;
-#X msg 67 86 open 3;
-#X obj 15 139 sel 13 10;
-#X obj 66 194 t a;
-#X obj 66 168 list prepend;
-#X obj 16 230 list;
-#X obj 17 181 t b b;
-#N canvas 661 206 523 418 parse 0;
+#N canvas 864 96 679 447 10;
+#X msg 13 72 ports;
+#X msg 22 97 close;
+#X obj 14 209 sel 13 10;
+#X obj 65 264 t a;
+#X obj 65 238 list prepend;
+#X obj 15 300 list;
+#X obj 16 251 t b b;
+#N canvas 660 212 523 418 parse 0;
 #X obj 24 12 inlet;
 #X obj 35 369 nbx 5 14 -1e+37 1e+37 0 0 temperature_air empty temperature_air
-0 -8 0 10 -262144 -1 -1 2140 256;
+0 -8 0 10 -262144 -1 -1 2150 256;
 #X obj 96 327 nbx 5 14 -1e+37 1e+37 0 0 humidity_air empty humidity_air
-0 -8 0 10 -262144 -1 -1 3770 256;
+0 -8 0 10 -262144 -1 -1 3540 256;
 #X obj 161 285 nbx 5 14 -1e+37 1e+37 0 0 temperature_water empty temperature_water
-0 -8 0 10 -262144 -1 -1 1856 256;
+0 -8 0 10 -262144 -1 -1 1868 256;
 #X obj 222 240 nbx 5 14 -1e+37 1e+37 0 0 luminosity empty luminosity
-0 -8 0 10 -262144 -1 -1 1100 256;
+0 -8 0 10 -262144 -1 -1 900 256;
 #X obj 287 199 nbx 5 14 -1e+37 1e+37 0 0 ph empty ph 0 -8 0 10 -262144
--1 -1 542 256;
+-1 -1 524 256;
 #X obj 355 184 nbx 5 14 -1e+37 1e+37 0 0 conductivity empty conductivity
-0 -8 0 10 -262144 -1 -1 1704 256;
+0 -8 0 10 -262144 -1 -1 1643 256;
 #X obj 32 64 unpack f f f f f f f f f f f f f f f f f f f f f f f f
 f f f f f;
 #X obj 33 117 parser;
@@ -61,35 +59,45 @@ f f f f f;
 #X connect 11 0 4 0;
 #X connect 12 0 5 0;
 #X connect 13 0 6 0;
-#X restore 16 258 pd parse;
-#X obj 189 79 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2140 256;
-#X obj 189 110 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 3770 256;
-#X obj 189 141 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1856 256;
-#X obj 189 172 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 1100 256;
-#X obj 189 203 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 542 256;
-#X obj 189 236 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 1704 256;
-#X text 18 23 aquisition opengarden au seconde.;
-#X obj 67 60 loadbang;
-#X text 23 300 todo : parser les comport a l initialisation pour choisir
+#X restore 15 328 pd parse;
+#X obj 250 85 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
+0 -8 0 10 -262144 -1 -1 2150 256;
+#X obj 250 116 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
+0 -8 0 10 -262144 -1 -1 3540 256;
+#X obj 250 147 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
+0 -8 0 10 -262144 -1 -1 1868 256;
+#X obj 250 178 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
+0 -8 0 10 -262144 -1 -1 900 256;
+#X obj 250 209 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
+-1 -1 524 256;
+#X obj 250 242 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
+0 -8 0 10 -262144 -1 -1 1643 256;
+#X text 9 19 aquisition opengarden au seconde.;
+#X obj 82 46 loadbang;
+#X text 12 365 todo : parser les comport a l initialisation pour choisir
 l arduino dynamiquement au lieu du hard code actuel;
-#X obj 90 141 print;
-#X connect 0 0 1 0;
-#X connect 1 0 4 0;
-#X connect 1 1 19 0;
-#X connect 2 0 1 0;
-#X connect 3 0 1 0;
-#X connect 4 0 8 0;
-#X connect 4 2 6 0;
-#X connect 5 0 6 1;
-#X connect 5 0 7 1;
+#X obj 146 203 print;
+#X msg 130 99 open 0;
+#X obj 14 185 comport 0 9600;
+#X msg 107 121 baud 9600;
+#X msg 84 142 pollintervall 1;
+#X obj 84 68 t b b b;
+#X connect 0 0 19 0;
+#X connect 1 0 19 0;
+#X connect 2 1 6 0;
+#X connect 2 2 4 0;
+#X connect 3 0 4 1;
+#X connect 3 0 5 1;
+#X connect 4 0 3 0;
+#X connect 5 0 7 0;
 #X connect 6 0 5 0;
-#X connect 7 0 9 0;
-#X connect 8 0 7 0;
-#X connect 8 1 6 1;
-#X connect 17 0 3 0;
+#X connect 6 1 4 1;
+#X connect 15 0 22 0;
+#X connect 18 0 19 0;
+#X connect 19 0 2 0;
+#X connect 19 1 17 0;
+#X connect 20 0 19 0;
+#X connect 21 0 19 0;
+#X connect 22 0 21 0;
+#X connect 22 1 20 0;
+#X connect 22 2 18 0;
