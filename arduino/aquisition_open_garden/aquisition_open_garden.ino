@@ -1,3 +1,6 @@
+// dev pour sonoponie
+// ajuster le refresh rate a variable....
+
 /*  
  *  OpenGarden sensor platform for Arduino from Cooking-hacks.
  *  
