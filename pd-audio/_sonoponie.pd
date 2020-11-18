@@ -1,21 +1,21 @@
-#N canvas 74 547 252 144 10;
+#N canvas 1176 101 648 180 10;
 #X obj 10 18 aquisition/aquisition_comport;
 #N canvas 74 136 386 271 transfer_signaux 0;
 #X obj 33 224 pd-osc/oSend 192.168.16.140 3332;
 #X obj 35 31 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 35 62 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 35 93 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 35 124 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 35 155 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 35 188 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X restore 13 61 pd transfer_signaux;
-#N canvas 212 95 784 618 gui 0;
+#N canvas 25 108 1175 656 gui 1;
 #X obj 56 18 catch~ master1;
 #X obj 83 37 catch~ master2;
 #X obj 56 55 output~;
@@ -42,7 +42,7 @@
 #X obj 122 57 loadbang;
 #X floatatom 308 115 5 0 1 1 sono_pan_1 sono_pan_1 -, f 5;
 #X floatatom 453 168 5 0 1 1 sono_volume_2 sono_volume_2 -, f 5;
-#X floatatom 459 366 5 0 1 1 sono_volume_5 sono_volume_5 -, f 5;
+#X floatatom 459 363 5 0 1 1 sono_volume_5 sono_volume_5 -, f 5;
 #X floatatom 439 429 5 0 1 1 sono_volume_6 sono_volume_6 -, f 5;
 #X floatatom 442 489 5 0 1 1 sono_volume_7 sono_volume_7 -, f 5;
 #X floatatom 1041 90 5 0 1 1 sono_volume_8 sono_volume_8 -, f 5;
@@ -51,49 +51,49 @@
 ;
 #X floatatom 446 232 5 0 1 1 sono_volume_3 sono_volume_3 -, f 5;
 #X floatatom 455 298 5 0 1 1 sono_volume_4 sono_volume_4 -, f 5;
-#N canvas 206 95 784 415 data_mapping_1 0;
+#N canvas 311 395 784 415 data_mapping_1 0;
 #X obj 33 35 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 137 35 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 231 35 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 344 35 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 418 34 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 491 34 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X obj 237 361 send sono_pan_1;
 #X obj 31 364 send sono_volume_1;
 #X obj 33 183 send sono_metro_1;
 #X obj 31 331 abs.scale 2000 2300 0 1;
 #X obj 238 331 abs.scale 4000 3000 0 1;
-#X obj 33 118 abs.scale 3500 1900 0.1 1;
+#X obj 33 119 abs.scale 3500 1900 0.1 1;
 #X connect 0 0 11 0;
 #X connect 9 0 7 0;
 #X connect 10 0 6 0;
 #X connect 11 0 8 0;
 #X restore 22 126 pd data_mapping_1;
-#N canvas 424 271 637 400 data_mapping_2 0;
+#N canvas 658 227 982 576 data_mapping_2 0;
 #X obj 41 34 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X obj 216 362 send sono_pan_2;
 #X obj 29 360 send sono_volume_2;
 #X obj 143 126 send sono_metro_2;
 #X obj 29 327 abs.scale 2000 2300 0 1;
 #X obj 217 328 abs.scale 2200 4900 0.1 1;
-#X obj 143 78 abs.scale 2200 7000 0.5 1;
+#X obj 143 78 abs.scale 7000 100 0.5 1;
 #X connect 1 0 11 0;
 #X connect 9 0 7 0;
 #X connect 10 0 6 0;
@@ -127,19 +127,19 @@
 #X obj 746 357 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X msg 122 76 90;
-#N canvas 333 131 684 507 data_mapping_3 0;
+#N canvas 1072 157 684 190 data_mapping_3 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X floatatom 89 251 5 0 0 0 - - -, f 5;
 #X floatatom 85 437 5 0 0 0 - - -, f 5;
 #X obj 34 399 +;
@@ -157,19 +157,19 @@
 #X connect 13 0 11 0;
 #X connect 14 0 9 0;
 #X restore 21 245 pd data_mapping_3;
-#N canvas 409 272 684 507 data_mapping_4 0;
+#N canvas 1032 304 684 507 data_mapping_4 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X floatatom 128 340 5 0 0 0 - - -, f 5;
 #X floatatom 287 353 5 0 0 0 - - -, f 5;
 #X obj 287 319 +;
@@ -178,7 +178,7 @@
 #X obj 111 393 send sono_volume_4;
 #X obj 287 278 abs.scale 100 6000 0 1;
 #X obj 111 307 abs.scale 400 900 0 1;
-#X obj 244 103 abs.scale 1600 2500 0.7 1;
+#X obj 244 102 abs.scale 5500 100 0.7 1;
 #X connect 2 0 14 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;
@@ -187,40 +187,40 @@
 #X connect 13 0 11 0;
 #X connect 14 0 9 0;
 #X restore 16 317 pd data_mapping_4;
-#N canvas 293 244 684 550 data_mapping_5 0;
+#N canvas 866 219 684 550 data_mapping_5 0;
 #X obj 28 34 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X obj 245 179 send sono_metro_3;
 #X obj 35 314 send sono_volume_3;
 #X obj 35 274 abs.scale 400 800 0 1;
-#X obj 245 123 abs.scale 1500 2100 0.5 1;
+#X obj 245 123 abs.scale 5500 100 0.5 1;
 #X connect 2 0 9 0;
 #X connect 8 0 7 0;
 #X connect 9 0 6 0;
 #X restore 16 385 pd data_mapping_5;
-#N canvas 242 95 737 380 data_mapping_6 0;
+#N canvas 657 158 737 380 data_mapping_6 0;
 #X obj 43 28 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 436 29 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 509 29 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X obj 361 129 send sono_metro_6;
 #X obj 51 405 send sono_volume_6;
 #X obj 51 348 abs.scale 2200 2400 0 1;
@@ -229,19 +229,19 @@
 #X connect 8 0 7 0;
 #X connect 9 0 6 0;
 #X restore 21 451 pd data_mapping_6;
-#N canvas 266 144 711 502 data_mapping_7 0;
+#N canvas 157 225 711 273 data_mapping_7 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 359 30 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 29 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 29 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X obj 359 131 send sono_metro_7;
 #X obj 259 356 send sono_pan_7;
 #X obj 393 399 send sono_volume_7;
@@ -253,58 +253,61 @@
 #X connect 10 0 7 0;
 #X connect 11 0 6 0;
 #X restore 18 507 pd data_mapping_7;
-#N canvas 231 191 684 507 data_mapping_8 0;
+#N canvas 1003 231 684 320 data_mapping_8 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 24 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X floatatom 496 326 5 0 0 0 - - -, f 5;
 #X obj 361 127 send sono_metro_8;
 #X obj 479 379 send sono_volume_8;
 #X obj 479 293 abs.scale 400 900 0 1;
-#X obj 361 83 abs.scale 5000 200 0.8 1;
+#X obj 361 83 abs.scale 5500 100 0.8 1;
 #X connect 3 0 10 0;
 #X connect 9 0 6 0;
 #X connect 9 0 8 0;
 #X connect 10 0 7 0;
 #X restore 618 111 pd data_mapping_8;
-#N canvas 307 186 781 610 data_mapping_9 0;
+#N canvas 830 474 840 321 data_mapping_9 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
-#X floatatom 92 409 5 0 0 0 - - -, f 5;
+0 -8 0 10 -262144 -1 -1 2729 256;
+#X floatatom 61 457 5 0 0 0 - - -, f 5;
 #X floatatom 349 450 5 0 0 0 - - -, f 5;
 #X obj 298 412 +;
-#X obj 90 459 send sono_pan_9;
 #X obj 355 486 send sono_metro_9;
-#X obj 507 213 send sono_metro_9;
 #X obj 294 363 abs.scale 100 6000 0 1;
-#X obj 75 376 abs.scale 400 900 0 1;
-#X obj 507 158 abs.scale 2000 2600 0.5 1;
-#X connect 5 0 14 0;
-#X connect 6 0 9 0;
-#X connect 7 0 10 0;
+#X obj 61 406 abs.scale 1500 400 0.5 1;
+#X obj 435 241 send sono_volume_9;
+#X obj 61 498 send sono_pan_9;
+#X obj 508 127 send sono_pan_9;
+#X obj 435 185 abs.scale 1500 400 0.5 1;
+#X obj 508 67 abs.scale 2600 2000 0.5 1;
+#X connect 5 0 16 0;
+#X connect 6 0 13 0;
+#X connect 7 0 9 0;
 #X connect 8 0 7 0;
-#X connect 12 0 8 0;
-#X connect 13 0 6 0;
-#X connect 14 0 11 0;
+#X connect 10 0 8 0;
+#X connect 11 0 6 0;
+#X connect 15 0 12 0;
+#X connect 16 0 14 0;
 #X restore 610 177 pd data_mapping_9;
 #X floatatom 772 401 5 0 1 1 sono_metro_13 sono_metro_13 -, f 5;
 #X floatatom 934 394 5 0 1 1 sono_pan_13 sono_pan_13 -, f 5;
@@ -318,19 +321,19 @@
 ;
 #X obj 743 237 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 389 156 781 610 data_mapping_10 0;
+#N canvas 385 180 781 610 data_mapping_10 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X floatatom 92 409 5 0 0 0 - - -, f 5;
 #X floatatom 367 427 5 0 0 0 - - -, f 5;
 #X obj 316 389 +;
@@ -339,7 +342,7 @@
 #X obj 373 463 send sono_metro_10;
 #X obj 312 340 abs.scale 100 6000 0 1;
 #X obj 75 376 abs.scale 400 900 0 1;
-#X obj 507 158 abs.scale 2000 2600 0.5 1;
+#X obj 507 157 abs.scale 2600 2000 0.5 1;
 #X connect 5 0 14 0;
 #X connect 6 0 10 0;
 #X connect 7 0 11 0;
@@ -348,42 +351,42 @@
 #X connect 13 0 6 0;
 #X connect 14 0 9 0;
 #X restore 611 237 pd data_mapping_10;
-#N canvas 2 161 850 504 data_mapping_11 0;
+#N canvas 2 173 850 504 data_mapping_11 0;
 #X obj 43 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X floatatom 662 350 5 0 0 0 - - -, f 5;
 #X obj 508 130 send sono_metro_11;
 #X obj 645 403 send sono_volume_11;
 #X obj 645 317 abs.scale 400 900 0 1;
-#X obj 508 75 abs.scale 2000 2600 0.8 1;
+#X obj 508 75 abs.scale 2600 2000 0.8 1;
 #X connect 5 0 10 0;
 #X connect 9 0 6 0;
 #X connect 9 0 8 0;
 #X connect 10 0 7 0;
 #X restore 612 291 pd data_mapping_11;
-#N canvas 135 258 684 507 data_mapping_12 0;
+#N canvas 1115 318 684 507 data_mapping_12 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X floatatom 235 372 5 0 0 0 - - -, f 5;
 #X floatatom 55 374 5 0 0 0 - - -, f 5;
 #X obj 55 340 +;
@@ -392,7 +395,7 @@
 #X obj 218 425 send sono_volume_12;
 #X obj 55 299 abs.scale 100 6000 0 1;
 #X obj 218 339 abs.scale 400 900 0 1;
-#X obj 39 74 abs.scale 1900 2700 0.5 1;
+#X obj 39 74 abs.scale 1900 3500 0.5 1;
 #X connect 0 0 14 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;
@@ -401,19 +404,19 @@
 #X connect 13 0 11 0;
 #X connect 14 0 9 0;
 #X restore 614 357 pd data_mapping_12;
-#N canvas 133 211 684 507 data_mapping_13 0;
+#N canvas 1115 179 684 507 data_mapping_13 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X floatatom 235 372 5 0 0 0 - - -, f 5;
 #X floatatom 55 374 5 0 0 0 - - -, f 5;
 #X obj 55 340 +;
@@ -422,7 +425,7 @@
 #X obj 218 425 send sono_volume_13;
 #X obj 55 299 abs.scale 100 6000 0 1;
 #X obj 218 339 abs.scale 400 900 0 1;
-#X obj 39 74 abs.scale 1900 2700 0.5 1;
+#X obj 39 72 abs.scale 1900 3500 0.5 1;
 #X connect 0 0 14 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;
@@ -437,19 +440,19 @@
 ;
 #X obj 751 499 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 132 217 684 507 data_mapping_14 0;
+#N canvas 821 177 684 507 data_mapping_14 0;
 #X obj 39 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 143 32 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 245 30 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 361 29 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 435 28 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 508 26 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X floatatom 235 372 5 0 0 0 - - -, f 5;
 #X floatatom 55 374 5 0 0 0 - - -, f 5;
 #X obj 55 340 +;
@@ -458,7 +461,7 @@
 #X obj 218 425 send sono_volume_14;
 #X obj 55 299 abs.scale 100 6000 0 1;
 #X obj 218 339 abs.scale 400 900 0 1;
-#X obj 39 74 abs.scale 1900 2700 0.5 1;
+#X obj 39 74 abs.scale 3500 1900 0.5 1;
 #X connect 0 0 14 0;
 #X connect 7 0 10 0;
 #X connect 8 0 7 0;
@@ -475,98 +478,98 @@
 #X obj 179 261 sonoSampler samples/p-c/ 6 100 10000 0.5 1;
 #X obj 175 325 sonoSampler samples/p-tank/ 8 100 10000 0.5 1;
 #X obj 169 392 sonoSampler samples/g-tank/ 8 100 10000 0.5 1;
-#X obj 167 191 sonoSampler samples/g-c/ 6 100 10000 0.2 1;
 #X obj 772 237 sonoSampler samples/euphone2/ 1 100 80000 0.5 1;
 #X obj 763 178 sonoSampler samples/euphone1/ 1 100 80000 0.5 1;
 #X obj 772 430 sonoSampler samples/harp/ 1 100 100000 0.5 1;
 #X obj 779 505 sonoSampler samples/underwater/ 1 100 80000 0.5 1;
 #X obj 774 364 sonoSampler samples/bansuri/ 1 100 80000 0.5 1;
+#X obj 167 190 sonoSampler samples/g-c/ 6 100 10000 0.5 1;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;
 #X connect 3 0 36 1;
-#X connect 4 0 84 1;
+#X connect 4 0 89 1;
 #X connect 5 0 83 1;
 #X connect 6 0 77 1;
 #X connect 7 0 78 1;
 #X connect 8 0 79 1;
-#X connect 9 0 86 1;
+#X connect 9 0 85 1;
 #X connect 10 0 80 1;
 #X connect 11 0 81 1;
 #X connect 12 0 82 1;
 #X connect 13 0 36 3;
-#X connect 14 0 84 2;
+#X connect 14 0 89 2;
 #X connect 15 0 83 2;
 #X connect 16 0 77 2;
 #X connect 17 0 78 2;
 #X connect 18 0 79 2;
-#X connect 19 0 86 2;
+#X connect 19 0 85 2;
 #X connect 20 0 80 2;
 #X connect 21 0 81 2;
 #X connect 22 0 82 2;
 #X connect 23 0 51 0;
 #X connect 24 0 36 2;
-#X connect 25 0 84 3;
+#X connect 25 0 89 3;
 #X connect 26 0 83 3;
 #X connect 27 0 77 3;
 #X connect 28 0 78 3;
 #X connect 29 0 79 3;
-#X connect 30 0 86 3;
+#X connect 30 0 85 3;
 #X connect 31 0 80 3;
 #X connect 32 0 81 3;
 #X connect 33 0 82 3;
 #X connect 37 0 36 0;
-#X connect 38 0 84 0;
+#X connect 38 0 89 0;
 #X connect 39 0 83 0;
 #X connect 40 0 77 0;
 #X connect 41 0 78 0;
 #X connect 42 0 79 0;
-#X connect 43 0 86 0;
+#X connect 43 0 85 0;
 #X connect 44 0 80 0;
 #X connect 45 0 81 0;
 #X connect 46 0 82 0;
-#X connect 47 0 89 1;
-#X connect 48 0 89 2;
-#X connect 49 0 89 3;
-#X connect 50 0 89 0;
+#X connect 47 0 88 1;
+#X connect 48 0 88 2;
+#X connect 49 0 88 3;
+#X connect 50 0 88 0;
 #X connect 51 0 2 2;
-#X connect 59 0 87 1;
-#X connect 60 0 87 2;
-#X connect 61 0 87 3;
-#X connect 62 0 87 0;
-#X connect 63 0 85 1;
-#X connect 64 0 85 2;
-#X connect 65 0 85 3;
-#X connect 66 0 85 0;
-#X connect 71 0 88 1;
-#X connect 72 0 88 2;
-#X connect 73 0 88 3;
-#X connect 74 0 88 0;
+#X connect 59 0 86 1;
+#X connect 60 0 86 2;
+#X connect 61 0 86 3;
+#X connect 62 0 86 0;
+#X connect 63 0 84 1;
+#X connect 64 0 84 2;
+#X connect 65 0 84 3;
+#X connect 66 0 84 0;
+#X connect 71 0 87 1;
+#X connect 72 0 87 2;
+#X connect 73 0 87 3;
+#X connect 74 0 87 0;
 #X restore 12 40 pd gui;
-#N canvas 512 160 573 248 simulateur 0;
+#N canvas 1219 132 573 248 simulateur 0;
 #X obj 202 43 nbx 5 14 -1e+37 1e+37 0 0 temperature_air empty temperature_air
-0 -8 0 10 -262144 -1 -1 0 256;
+0 -8 0 10 -262144 -1 -1 2087 256;
 #X obj 202 75 nbx 5 14 -1e+37 1e+37 0 0 humidity_air empty humidity_air
-0 -8 0 10 -262144 -1 -1 0 256;
+0 -8 0 10 -262144 -1 -1 367 256;
 #X obj 202 106 nbx 5 14 -1e+37 1e+37 0 0 temperature_water empty temperature_water
 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 202 137 nbx 5 14 -1e+37 1e+37 0 0 luminosity empty luminosity
 0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 202 168 nbx 5 14 -1e+37 1e+37 0 0 ph empty ph 0 -8 0 10 -262144
--1 -1 0 256;
-#X obj 202 201 nbx 5 14 -1e+37 1e+37 0 0 conductivity empty conductivity
-0 -8 0 10 -262144 -1 -1 0 256;
+-1 -1 902 256;
+#X obj 203 203 nbx 5 14 -1e+37 1e+37 0 0 conductivity empty conductivity
+0 -8 0 10 -262144 -1 -1 4181 256;
 #X text 197 5 SIMULATEUR;
 #X obj 21 44 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_air temperature_air
-0 -8 0 10 -262144 -1 -1 2010 256;
+0 -8 0 10 -262144 -1 -1 1960 256;
 #X obj 21 75 nbx 5 14 -1e+37 1e+37 0 0 empty humidity_air humidity_air
-0 -8 0 10 -262144 -1 -1 2170 256;
+0 -8 0 10 -262144 -1 -1 100 256;
 #X obj 21 106 nbx 5 14 -1e+37 1e+37 0 0 empty temperature_water temperature_water
-0 -8 0 10 -262144 -1 -1 1875 256;
+0 -8 0 10 -262144 -1 -1 1956 256;
 #X obj 21 137 nbx 5 14 -1e+37 1e+37 0 0 empty luminosity luminosity
-0 -8 0 10 -262144 -1 -1 700 256;
+0 -8 0 10 -262144 -1 -1 200 256;
 #X obj 21 168 nbx 5 14 -1e+37 1e+37 0 0 empty ph ph 0 -8 0 10 -262144
--1 -1 629 256;
+-1 -1 647 256;
 #X obj 21 201 nbx 5 14 -1e+37 1e+37 0 0 empty conductivity conductivity
-0 -8 0 10 -262144 -1 -1 2828 256;
+0 -8 0 10 -262144 -1 -1 2729 256;
 #X text 17 7 REAL DATA IN;
 #X restore 12 86 pd simulateur;
